@@ -1,0 +1,6 @@
+---
+# handlers file for web-server-role
+- name: apache-restart
+  service:
+    name: httpd
+    state: restarted

@@ -1,0 +1,12 @@
+---
+# vars file for ec2-role
+my_ip: "194.90.225.101"
+ec2Key: "none"
+instance_type: "t2.micro"
+ami_id: "ami-08a52ddb321b32a8c"
+vpc_id: "vpc-0e1ed33e01ffd3643"
+vpc_subnet_id: "subnet-0619ddfa349f46bc0"
+sg_name: web-app-sg
+count: 1
+region: "us-east-1"
+tag_name: "none"

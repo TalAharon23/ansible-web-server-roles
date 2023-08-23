@@ -1,0 +1,13 @@
+- name: Run ec2-role
+  hosts: localhost
+  roles:
+  - role: ec2-role
+    ec2key: "ec2key"
+    count: 1
+    tag_name: "webserver"
+
+- name: Run web-server-role
+  hosts: webserver
+  become: true
+  roles:
+  - web-server-role

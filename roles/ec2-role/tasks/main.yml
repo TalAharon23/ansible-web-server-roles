@@ -1,0 +1,50 @@
+---
+- name: Create Security Group Within default VPC
+  ec2_group:
+    name: "{{ sg_name }}"
+    description: Allow SSH, HTTP, and HTTPS
+    region: "{{ region }}"
+    vpc_id: "{{ vpc_id }}"
+    rules:
+      - proto: tcp
+        ports:
+          - 22
+          - 80
+          - 443
+        cidr_ip: "{{ my_ip }}/32"
+      - proto: tcp
+        ports:
+          - 22
+        from_port: 22
+        to_port: 22
+        cidr_ip: "{{ ansible_default_ipv4.address }}/32"
+    rules_egress:
+      - proto: tcp
+        ports:
+          - 80
+          - 443
+        cidr_ip: 0.0.0.0/0
+
+- name: Provision ec2 on aws
+  ec2_instance:
+    key_name: "{{ ec2key }}"
+    instance_type: "{{ instance_type }}"
+    image_id: "{{ ami_id }}"
+    region: "{{ region }}"
+    security_group: "{{ sg_name }}"
+    wait: yes
+    vpc_subnet_id: "{{ vpc_subnet_id }}"
+    count: "{{ count }}"
+    network:
+      assign_public_ip: true
+    tags:
+      Name: "{{ tag_name }}"
+      EnvName: "Test Environment"
+    state: started
+  register: ec2
+
+- name: Add new instance to host group
+  add_host: 
+    hostname: "{{ item.public_ip_address }}"
+    groupname: webserver
+  loop: "{{ ec2.instances }}"
