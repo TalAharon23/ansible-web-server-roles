@@ -46,6 +46,7 @@ Before you start, make sure you have the following tools and resources:
    Generate an SSH key pair for EC2 instances:
    ```bash
     ssh-keygen -t rsa -b 4096 -f ~/.ssh/my_aws
+    ```
 
    Set appropriate permissions for the private key:
    ```bash
@@ -58,8 +59,8 @@ Before you start, make sure you have the following tools and resources:
 1. Navigate to the Terraform Directory
 
    ```bash
-   cd /etc/ansible/ansible-web-server-roles
-
+   cd /etc/ansible/ansible-web-server-role 
+   ```
 
 2. terraform init
 
@@ -85,6 +86,7 @@ Before you start, make sure you have the following tools and resources:
 
    ```bash
    cd /etc/ansible/ansible-web-server-roles
+   ```
 
 2. Set the playbook variables:
 
