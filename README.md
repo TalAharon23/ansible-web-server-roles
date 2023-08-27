@@ -82,13 +82,15 @@ Before you start, make sure you have the following tools and resources:
 
 | Variable           | Value              | Required | Default       | Description                                          |
 |--------------------|--------------------|----------|---------------|------------------------------------------------------|
+| my_ip              | string             | Yes      | -----         | Your local IP for inbound rules and ssh connection   |
 | ec2key             | string             | Yes      | -----         | Name of the EC2 key pair                            |
 | vpc_id             | string             | Yes      | vpc-XXXXXXX   | VPC id got from terraform apply |
 | subent_id          | string             | Yes      | subnet-XXXXXX | Subnet id got from terraform apply |
 | region             | string             | No       | us-east-1     | AWS region                                           |
 | instance_type      | string             | No       | t2.micro      | EC2 instance type                                   |
-| ami_id             | string             | No       | ami-08a52ddb321b32a8c         | ID of the Amazon Linux AMI for EC2                  |
-| tag_name           | string             | No       | webserver     | Tag name for webserver for connecting the ec2's                     |
+| ami_id             | string             | No       | ami-08a52ddb321b32a8c         | ID of the Amazon Linux AMI for EC2  |
+| sg_name            | string             | No      | web-app-sg     | AWS Security group name |
+| tag_name           | string             | No       | webserver     | Tag name for webserver for connecting the ec2's      |
 | count              | integer            | No       | 1             | Number of web-servers to deploy |
 
 Edit the playbook web-app.yml file e.g.
