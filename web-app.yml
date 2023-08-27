@@ -2,7 +2,7 @@
   hosts: localhost
   roles:
   - role: ec2-role
-    my-ip: 192.94.220.5 # Replace with your own public IP (search what is my ip)
+    my-ip: XXX.XXX.XXX.XXX # Replace with your own public IP (search what is my ip)
     ec2key: "ec2key"
     count: 1
     tag_name: "webserver"
