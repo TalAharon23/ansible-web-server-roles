@@ -92,6 +92,7 @@ Before you start, make sure you have the following tools and resources:
 | count              | integer            | No       | 1             | Number of web-servers to deploy |
 
 Edit the playbook web-app.yml file e.g.
+
 <img width="262" alt="image" src="https://github.com/TalAharon23/ansible-web-server-roles/assets/82831070/180a09cd-8b9b-46f8-bfec-0b0b5f4dcf90">
 
 
