@@ -96,7 +96,8 @@ Before you start, make sure you have the following tools and resources:
 Edit the playbook web-app.yml file e.g.
 
 
-<img width="262" alt="image" src="https://github.com/TalAharon23/ansible-web-server-roles/assets/82831070/180a09cd-8b9b-46f8-bfec-0b0b5f4dcf90">
+<img width="601" alt="image" src="https://github.com/TalAharon23/ansible-web-server-roles/assets/82831070/9226d9bc-666e-40d1-92b5-8fbabdb12d92">
+
 
 
 2. Run the Ansible playbook:
