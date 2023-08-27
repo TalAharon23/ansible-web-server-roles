@@ -30,6 +30,7 @@ Before you start, make sure you have the following tools and resources:
    ```bash
    git clone https://github.com/yourusername/web-server-deployment.git /etc/ansible
    cd /etc/ansible
+   ```
 
 2. Export AWS Credentials
 
@@ -37,6 +38,7 @@ Before you start, make sure you have the following tools and resources:
     ```bash
     export AWS_ACCESS_KEY_ID="your_access_key"
     export AWS_SECRET_ACCESS_KEY="your_secret_key"
+    ```
 
 
 3. Generate and Set Up EC2 Key Pair:
@@ -48,6 +50,7 @@ Before you start, make sure you have the following tools and resources:
    Set appropriate permissions for the private key:
    ```bash
    chmod 400 ~/.ssh/my_aws
+   ```
 
 
 ## Provision Infrastructure with Terraform
@@ -65,14 +68,16 @@ Before you start, make sure you have the following tools and resources:
 
 
 3. Review and Apply the Plan
-   
+
    Review the plan to ensure it aligns with your expectations:
    ```bash
     terraform plan
+    ```
 
    Apply the plan to create the AWS infrastructure:
    ```bash
    terraform apply
+   ```
 
 ## Configure Ansible and Run Playbook
 
@@ -107,7 +112,7 @@ After the Ansible playbook completes successfully, you can access the web server
 ## Cleaning Up
 When you're done with testing, it's important to clean up your resources to avoid unnecessary charges.
 
-1. Because of the web-server EC2s and the security group (web-app-sg) were created from Ansible, need to destroy them manually in the AWS console.
+1. Because of the web-server EC2s and the security group (web-app-sg) were created from Ansible, need to destroy them manually from the AWS console.
 
 2. Navigate to the Terraform directory and run the following command:
 s
