@@ -40,18 +40,7 @@ Before you start, make sure you have the following tools and resources:
     export AWS_SECRET_ACCESS_KEY="your_secret_key"
     ```
 
-
-3. Generate and Set Up EC2 Key Pair:
-   
-   Generate an SSH key pair for EC2 instances:
-   ```bash
-    ssh-keygen -t rsa -b 4096 -f ~/.ssh/my_aws
-    ```
-
-   Set appropriate permissions for the private key:
-   ```bash
-   chmod 400 ~/.ssh/my_aws
-   ```
+3. Generate and Set Up EC2 Key Pair, then add it to the repo directory.
 
 
 ## Provision Infrastructure with Terraform
@@ -102,6 +91,7 @@ Before you start, make sure you have the following tools and resources:
 | tag_name           | string             | No       | webserver     | Tag name for webserver for connecting the ec2's                     |
 | count              | integer            | No       | 1             | Number of web-servers to deploy |
 
+Edit the playbook web-app.yml file e.g:
 
 2. Run the Ansible playbook:
 
