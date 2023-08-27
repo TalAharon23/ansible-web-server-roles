@@ -1,6 +1,6 @@
 # Deploying Web Server with Terraform and Ansible
 
-Welcome to the guide for setting up a web server on AWS using Terraform and Ansible. This guide will walk you through each step, from setting up your environment to deploying the web server and cleaning up afterwards.
+Welcome to the guide for setting up a web server on AWS using Terraform and Ansible. This guide will walk you through each step, from setting up your environment to deploying the web server and cleaning up afterward.
 
 ## Table of Contents
 
@@ -40,7 +40,7 @@ Before you start, make sure you have the following tools and resources:
     export AWS_SECRET_ACCESS_KEY="your_secret_key"
     ```
 
-3. Generate and Set Up EC2 Key Pair, then add it to the repo directory.
+3. Generate and Set Up the EC2 Key Pair, then add it to the repo directory.
 
 
 ## Provision Infrastructure with Terraform
@@ -91,7 +91,9 @@ Before you start, make sure you have the following tools and resources:
 | tag_name           | string             | No       | webserver     | Tag name for webserver for connecting the ec2's                     |
 | count              | integer            | No       | 1             | Number of web-servers to deploy |
 
-Edit the playbook web-app.yml file e.g:
+Edit the playbook web-app.yml file e.g.
+<img width="262" alt="image" src="https://github.com/TalAharon23/ansible-web-server-roles/assets/82831070/180a09cd-8b9b-46f8-bfec-0b0b5f4dcf90">
+
 
 2. Run the Ansible playbook:
 
@@ -103,9 +105,9 @@ Edit the playbook web-app.yml file e.g:
 After the Ansible playbook completes successfully, you can access the web server by entering the public IP address of the EC2 instance in a web browser.
 
 ## Cleaning Up
-When you're done with testing, it's important to clean up your resources to avoid unnecessary charges.
+When you're done with testing, it's essential to clean up your resources to avoid unnecessary charges.
 
-1. Because of the web-server EC2s and the security group (web-app-sg) were created from Ansible, need to destroy them manually from the AWS console.
+1. Because the web-server EC2s and the security group (web-app-sg) were created from Ansible, they must be destroyed manually from the AWS console.
 
 2. Navigate to the Terraform directory and run the following command:
 s
