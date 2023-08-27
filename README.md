@@ -28,7 +28,7 @@ Before you start, make sure you have the following tools and resources:
 1. Clone the Repository
 
    ```bash
-   git clone https://github.com/yourusername/web-server-deployment.git /etc/ansible
+   git clone https://github.com/TalAharon23/ansible-web-server-roles.git /etc/ansible
    cd /etc/ansible
    ```
 
@@ -66,6 +66,7 @@ Before you start, make sure you have the following tools and resources:
 
     ```bash
     terraform init
+    ```
 
 
 3. Review and Apply the Plan
