@@ -96,7 +96,7 @@ Before you start, make sure you have the following tools and resources:
 Edit the playbook web-app.yml file e.g.
 
 
-<img width="657" alt="image" src="https://github.com/TalAharon23/ansible-web-server-roles/assets/82831070/c257a728-7e2c-4cba-836e-cdf9baf5cace">
+<img width="760" alt="image" src="https://github.com/TalAharon23/ansible-web-server-roles/assets/82831070/723da705-9ddd-45b9-a9db-772cb8f39aad">
 
 
 
@@ -111,7 +111,6 @@ Edit the playbook web-app.yml file e.g.
 After the Ansible playbook completes successfully, you can access the web server by entering the public IP address of the EC2 instance in a web browser and see the output:
 
 
-<img width="760" alt="image" src="https://github.com/TalAharon23/ansible-web-server-roles/assets/82831070/723da705-9ddd-45b9-a9db-772cb8f39aad">
 
 
 
