@@ -2,10 +2,12 @@
   hosts: localhost
   roles:
   - role: ec2-role
-    my-ip: XXX.XXX.XXX.XXX # Replace with your own public IP (search what is my ip)
+    my-ip: XXX.XXX.XXX.XXX               # Replace with your own public IP (search what is my ip)
     ec2key: "ec2key"
     count: 1
     tag_name: "webserver"
+    vpc_id: "vpc-XXXXXXXXX"              # Replace with your vpc_id
+    vpc_subnet_id: "subnet-XXXXXXXXXX"   # Replace with your subent_id 
 
 - name: Run web-server-role
   hosts: webserver
