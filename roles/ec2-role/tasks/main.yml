@@ -1,5 +1,5 @@
 ---
-- name: Create Security Group Within default VPC
+- name: Create Security Group Within VPC
   ec2_group:
     name: "{{ sg_name }}"
     description: Allow SSH, HTTP, and HTTPS
