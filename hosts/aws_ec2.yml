@@ -4,5 +4,3 @@ regions:
   - "us-east-1"
 filters:
   tag:Name: 'webserver'
-# compose:
-#   ansible_host: public_ip_address
