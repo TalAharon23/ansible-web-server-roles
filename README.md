@@ -118,5 +118,6 @@ After the Ansible playbook completes successfully, you can access the web server
 ## Cleaning Up
 Run the followin command from the /etc/ansible directory:
 
-    ```bash
-    ./destroy_webserver.sh
+   ```bash
+   ./destroy_webserver.sh
+   ```
