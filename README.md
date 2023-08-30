@@ -116,11 +116,8 @@ After the Ansible playbook completes successfully, you can access the web server
 
 
 ## Cleaning Up
-When you're done with testing, it's essential to clean up your resources to avoid unnecessary charges.
+Run the followin command from the /etc/ansible directory:
 
-1. Because the web-server EC2s and the security group (web-app-sg) were created from Ansible, they must be destroyed manually from the AWS console.
+    ```bash
+    ./destroy_webserver.sh
 
-2. Navigate to the Terraform directory and run the following command:
-s
-```bash
-terraform destroy

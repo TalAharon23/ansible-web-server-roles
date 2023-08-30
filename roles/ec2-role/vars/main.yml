@@ -1,12 +1,13 @@
 ---
 # vars file for ec2-role
 my_ip: "XXX.XXX.XXX.XXX"
-ec2Key: "none"
+ec2key: "ec2key"
 instance_type: "t2.micro"
 ami_id: "ami-08a52ddb321b32a8c"
 vpc_id: "vpc-XXXXX"
 vpc_subnet_id: "subnet-XXXXX"
-sg_name: web-app-sg
+sg_name: web-server-sg
 count: 1
 region: "us-east-1"
-tag_name: "none"
+tag_name: "webserver"
+state: "present"

@@ -1,8 +1,10 @@
 ---
+###### Create Env ######
+
 - name: Create Security Group Within VPC
   ec2_group:
     name: "{{ sg_name }}"
-    description: Allow SSH, HTTP, and HTTPS
+    description: Allow SSH, HTTP and HTTPS
     region: "{{ region }}"
     vpc_id: "{{ vpc_id }}"
     rules:
@@ -24,6 +26,12 @@
           - 80
           - 443
         cidr_ip: 0.0.0.0/0
+  when: state == 'present'
+
+- name: Inform user to wait for EC2 instance
+  debug:
+    msg: "Please wait while the EC2 instance is being provisioned. This may take several minutes."
+  when: state == 'present'
 
 - name: Provision ec2 on aws
   ec2_instance:
@@ -41,10 +49,41 @@
       Name: "{{ tag_name }}"
       EnvName: "Test Environment"
     state: started
+  async: 300  # Set to 5 minutes (300 seconds)
+  poll: 10
   register: ec2
+  when: state == 'present'
 
 - name: Add new instance to host group
   add_host: 
     hostname: "{{ item.public_ip_address }}"
-    groupname: webserver
+    groupname: "{{ tag_name }}"
   loop: "{{ ec2.instances }}"
+  when: state == 'present'
+
+###### Destroy Env ######
+
+- name: Search for EC2 instance named webserver
+  ec2_instance_info:
+    filters:
+      "tag:Name": "{{ tag_name }}"
+      instance-state-name: ["running"]
+    region: "{{ region }}"
+  register: ec2_deletion
+  when: state == 'absent'
+
+- name: Terminate EC2 deletion instance
+  ec2_instance:
+    instance_ids: "{{ ec2_deletion.instances[0].instance_id }}"
+    region: "{{ region }}"
+    state: absent
+  when: 
+    - state == 'absent'
+    - ec2_deletion.instances is defined
+
+- name: Delete Security Group
+  ec2_group:
+    name: "{{ sg_name }}"
+    region: "{{ region }}"
+    state: absent
+  when: state == 'absent'
