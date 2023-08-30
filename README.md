@@ -121,6 +121,6 @@ When you're done with testing, it's essential to clean up your resources to avoi
 1. Because the web-server EC2s and the security group (web-app-sg) were created from Ansible, they must be destroyed manually from the AWS console.
 
 2. Navigate to the Terraform directory and run the following command:
-s
+
 ```bash
 terraform destroy
