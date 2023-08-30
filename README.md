@@ -120,4 +120,3 @@ Run the followin command from the /etc/ansible directory:
 
     ```bash
     ./destroy_webserver.sh
-
